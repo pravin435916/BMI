@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bmi Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+</head>
+<style>
+    .conatainer{
+        width: 100%;
+        height: 100%;
+       display: flex;
+       justify-content: center;
+       background-color: black;
+    }
+   
+    .input{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        width: 340px;
+        height: 440px; 
+        padding: 15px;
+        /* gap: 30px; */
+        border: 1px solid black;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 1px 10px 20px rgba(0, 0, 0, 0.8);
+        border-radius: 15px;
+        background: url('./bmi-bg.jpeg');
+        object-fit: contain;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+
+    }
+    .input h1{
+        text-shadow: 1px 1px 20px white;
+        color: white;
+        text-decoration: overline;
+    }
+    #cal{
+      background-color: rgb(30, 128, 30);
+      color: #ffff;
+      border-radius: 18px;
+      width: 150px;
+      position: relative;
+      left: 25%;
+      border: 1px solid rgb(30, 128, 30) ;
+      /* top: 200px; */
+    }
+    .input input{
+        outline: none;
+        border-radius: 12px 18px;
+        /* box-shadow: 1px 0.5px 10px black; */
+        background-color: white;
+        padding: 10px;
+        margin-top: 30px;
+        width: 90%;
+    }
+    @media (max-width: 600px) {
+  .input {
+    width: 250px;
+    height: 350px;
+  }
+}
+.input #h2,.input #h21{
+    color: white;
+}
+@media (max-width: 400px) {
+  .input {
+    width: 270px;
+    height: 400px;
+  }
+}
+.input #h2,.input #h21{
+   display: flex;
+   flex-direction: column;
+   padding: 5px;
+   margin-top: 0px;
+   
+}
+.boxes{
+    display: flex;
+    gap: 20px;
+    text-align: center;
+}
+.boxes i{
+    font-size: 2.2rem;
+    position: relative;
+    top: 10px;
+    left: -15px;
+    color: white;
+    /* color: black; */
+    /* position: absolute;
+    top:60px; */
+}
+.boxes input[type="radio"]{
+    border: none;
+    outline: none;
+    accent-color: green;
+}
+.boxes h2{
+    font-size: 1rem;
+    color: white;
+}
+.male{
+    width: 100px;
+    height: 80px;
+    border: 1px solid white;
+    margin-left: 40px;
+    color: white;
+    font-family:"poppins";
+}
+.male:hover{
+    background-color: rgb(117, 112, 112);
+    cursor: pointer;
+}
+.female:hover{
+    background-color: rgb(117, 112, 112);
+    cursor: pointer;
+}
+
+.female{
+    border: 1px solid white;
+    width: 100px;
+    height: 80px;
+    color: white;
+    font-family:"poppins";
+}
+.row{
+    display: flex;
+}
+</style>
+<body>
+<div class="container">
+   <div class="input">
+     <h1>BMI Calculator</h1>
+     <div class="boxes">
+        <div class="male">
+            <i class="fa-solid fa-person"></i>
+            <div class="row">
+            <input type="radio" name="h" id="ck">
+            <h2>Male</h2> </div>
+        </div>
+        <div class="female">
+        <i class="fa-solid fa-person-dress"></i>
+        <div class="row">
+        <input type="radio" name="h" id="ck">
+        <h2>Female</h2> </div>
+    </div>
+     </div>
+    <input type="text" id="kg" placeholder="Enter weight (kg)">
+    <input type="text" id="cm" placeholder="Enter height (cm)">
+    <input type="button" value="Check Now" id="cal" onclick="calculate()">
+    <h2 id="h2"></h2>
+    <h2 id="h21"></h2>
+</div>
+     </div>
+    
+    <script src="bmi.js"></script>
+</body>
+</html>
